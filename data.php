@@ -91,7 +91,10 @@ echo "insert into data_karyawan set
             while ($tampil_data=mysqli_fetch_array($data_karyawan)) {
         ?>
         <tr>
-            <td><?= $no++; ?>.</td>
+            <td>
+                <input type="checkbox" name="checkbox[]" />
+                <?= $no++; ?>.
+            </td>
             <td><?= $tampil_data['id']; ?></td>
             <td><?= $tampil_data['nama']; ?></td>
             <td><?= $tampil_data['usia']; ?></td>
