@@ -86,14 +86,9 @@ echo "insert into data_karyawan set
         </tr>
         <?php
         if(!isset($_GET['kode'])){
-            //disini 
-            
-            
-         
-        $no=1; 
-        $data_karyawan=mysqli_query($koneksi,"SELECT * FROM data_karyawan ORDER BY nama ASC");
-        while ($tampil_data=mysqli_fetch_array($data_karyawan)) {
-        
+            $no=1; 
+            $data_karyawan=mysqli_query($koneksi,"SELECT * FROM data_karyawan ORDER BY nama ASC");
+            while ($tampil_data=mysqli_fetch_array($data_karyawan)) {
         ?>
         <tr>
             <td><?= $no++; ?>.</td>
@@ -102,12 +97,13 @@ echo "insert into data_karyawan set
             <td><?= $tampil_data['usia']; ?></td>
             <td><?= $tampil_data['tanggal_lahir']; ?></td>
             <td><?= $tampil_data['keterangan']; ?></td>
-            <td><a href="<?= '?kode='.$tampil[id]; ?>"> Hapus</td>
+            <td><a href="<?= '?kode='.$tampil['id']; ?>"> Hapus</td>
             <td>Ubah</td>
         </tr>
-
-
-        <?php    }} ?>
+        <?php    
+        }
+        } 
+        ?>
 
     </table>       
 </body>
