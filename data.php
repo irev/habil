@@ -116,6 +116,7 @@ mysqli_query($koneksi,"delete from data_karyawan where id='$_GET[kode]'");
 
 echo "Data telah terhapus";
 echo "<meta http-uquiv=refresh content=2;URL='data.php'>";
+header('Location: data.php');
 }
 
 ?>
